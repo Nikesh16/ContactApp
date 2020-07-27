@@ -1,0 +1,38 @@
+package com.company;
+
+import java.util.ArrayList;
+
+public class Contacts {
+
+    private static ArrayList<String> contactList = new ArrayList<String>();
+
+    public void  addContact(String name){
+        contactList.add(name);
+        System.out.println("Contact name: " + name + " added successfully");
+    }
+    public void modifyContact(int number,String name){
+        contactList.set(number, name);
+        System.out.println(name + " has been modified successfully");
+    }
+    public void removeContact(String name){
+        contactList.remove(name);
+        System.out.println(name + " has been removed successfully");
+    }
+
+    public void queryContact( String name){
+
+        if ( contactList.contains(name)){
+            System.out.println(" Good news, contact found in our database");
+        }
+        else{
+            System.out.println("contact not found");}
+    }
+
+    public void  printContact(int number){
+        System.out.println("your contact size is " + contactList.size());
+        for ( int i = 0; i< contactList.size(); i++){
+            System.out.println("Printing completed! You have these contacts in our database: " +contactList.get(i));
+        }
+    }
+
+}
